@@ -8,3 +8,4 @@ __pycache__/
 TODO.md
 logs/
 *.log
+.env

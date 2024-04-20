@@ -1,0 +1,38 @@
+services:
+  dnevnik365:
+    image: python:3.12.2
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - POSTGRES_USERNAME=${POSTGRES_USERNAME}
+      - POSRGRES_PASSWORD=${POSRGRES_PASSWORD}
+    depends_on:
+      - nginx
+    networks:
+      - network
+    volumes:
+      - .:/appgi
+    ports:
+      - ${PORT}:${PORT}
+    command: uvicorn dnevnik365:app --workers 4 --host ${HOST} --port ${PORT} --reload --reload-dir . --log-config=log_config.ini --log-level=debug
+  nginx:
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: ./dockerFiles/nginx/Dockerfile
+    networks:
+      - network
+    ports:
+      - "8000:80"
+  postgres:
+    container_name: postgres
+    image: postgres:14.1-alpine
+    environment:
+      postgres_password: ${POSRGRES_PASSWORD}
+      postgres_username: ${POSRGRES_USERNAME}
+    networks:
+      - network
+networks:
+  network:
+    driver: bridge
