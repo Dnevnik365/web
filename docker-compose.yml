@@ -1,3 +1,4 @@
+version: "0.1"
 services:
   dnevnik365:
     image: python:3.12.2

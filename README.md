@@ -1,9 +1,9 @@
 <p align="center">
     <a href="https://github.com/Dnevnik365/web/releases">
-        <img alt="release" src="https://img.shields.io/github/v/release/Dnevnik365/web?color=green&label=Latest Release&style=for-the-badge&sort=semver">
+        <img alt="release" src="https://img.shields.io/github/v/release/Dnevnik365/web?color=green&label=Последняя версия&style=for-the-badge&sort=semver">
     </a>
     <a href="https://github.com/Dnevnik365/web/blob/dev/LICENSE">
-        <img alt="license" src="https://img.shields.io/github/license/Dnevnik365/web?color=green&style=for-the-badge">
+        <img alt="license" src="https://img.shields.io/github/license/Dnevnik365/web?color=green&style=for-the-badge&label=Лицензия">
     </a>
     <img alt="python" src="https://img.shields.io/badge/3.7+-green?color=green&label=Python&style=for-the-badge">
 </p>
