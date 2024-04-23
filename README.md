@@ -64,9 +64,9 @@ make test-cov
 
 Ниже все нужные переменные окружения. Примеры [здесь](https://github.com/Dnevnik365/web/blob/dev/.env.example)
 
-- `POSTGRES_USERNAME` - username for postgres database
+- `POSTGRES_USERNAME` - юзернейм для базы данных
 
-- `POSTGRES_PASSWORD` - password for postgres database
+- `POSTGRES_PASSWORD` - пароль для базы данных
 
 
 ## 💿 [Зависимости](https://github.com/Dnevnik365/web/blob/dev/pyproject.toml)
@@ -82,6 +82,12 @@ make test-cov
 - **[python-multipart](https://pypi.org/project/python-multipart/) - 0.0.9**
 
 - **[fastapi-users](https://pypi.org/project/fastapi-users/) - 13.0.0**
+
+- **[sqlalchemy](https://pypi.org/project/sqlalchemy) - 2.0.29**
+
+- **[pydnevnikruapi](https://pypi.org/project/pydnevnikruapi) - 0.1.1**
+
+- **[redis](https://pypi.org/project/redis) - 5.0.3**
 
 - **[uvicorn](https://pypi.org/project/uvicorn/) - 0.29.0**
 
