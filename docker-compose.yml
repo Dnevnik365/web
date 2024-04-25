@@ -3,7 +3,20 @@ version: '3.7'
 services:
   dnevnik365:
     build: .
-
-
+    volumes:
+      - ./dnevnik365/:/app/
+    ports:
+      - ${PORT}:${PORT}
+    environment:
+      - DATABASE_URI='postgresql+asyncpg://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}'
+    depends_on:
+      - db
+      - nginx
   db:
     image: postgres:12.1-alpine
+  nginx:
+    image: nginx:alpine
+    ports:
+      - 80:80
+  redis:
+    image: redis:7.2.4

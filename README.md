@@ -18,6 +18,8 @@
 
 ## 🛠 Команды для запуска
 
+Нужно чтобы `make`, `docker` и `docker-compose` были установлены
+
 Скачать проект с гитхаба
 ```bash
 git clone https://github.com/Dnevnik365/web/
@@ -85,6 +87,8 @@ make test-cov
 
 - **[python-dotenv](https://pypi.org/project/python-dotenv/) - 1.0.1**
 
+- **[pydantic](https://pypi.org/project/pydantic/) - 2.7.0**
+
 - **[jinja2](https://pypi.org/project/jinja2/) - 3.1.3**
 
 - **[python-multipart](https://pypi.org/project/python-multipart/) - 0.0.9**
@@ -103,6 +107,6 @@ make test-cov
 
 - **[flake8](https://pypi.org/project/flake8/) - 7.0.0**
 
-- **[pytest](https://pypi.org/project/pytest/) = 8.1.1**
+- **[pytest](https://pypi.org/project/pytest/) - 8.1.1**
 
 - **[pytest-cov](https://pypi.org/project/pytest-cov/) - 5.0.0**
