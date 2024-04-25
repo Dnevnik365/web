@@ -1,9 +1,9 @@
 <p align="center">
     <a href="https://github.com/Dnevnik365/web/releases">
-        <img alt="release" src="https://img.shields.io/github/v/release/Dnevnik365/web?color=green&label=Последняя версия&style=for-the-badge&sort=semver">
+        <img alt="release" src="https://img.shields.io/github/v/release/Dnevnik365/web?color=green&label=Latest Release&style=for-the-badge&sort=semver">
     </a>
     <a href="https://github.com/Dnevnik365/web/blob/dev/LICENSE">
-        <img alt="license" src="https://img.shields.io/github/license/Dnevnik365/web?color=green&style=for-the-badge&label=Лицензия">
+        <img alt="license" src="https://img.shields.io/github/license/Dnevnik365/web?label=License&color=green&style=for-the-badge">
     </a>
     <img alt="python" src="https://img.shields.io/badge/3.7+-green?color=green&label=Python&style=for-the-badge">
 </p>
@@ -64,9 +64,17 @@ make test-cov
 
 Ниже все нужные переменные окружения. Примеры [здесь](https://github.com/Dnevnik365/web/blob/dev/.env.example)
 
-- `POSTGRES_USERNAME` - юзернейм для базы данных
+- `HOST` - хост сервера
 
-- `POSTGRES_PASSWORD` - пароль для базы данных
+- `PORT` - порт сервера
+
+- `DB_USER` - юзернейм для базы данных
+
+- `DB_PASSWORD` - пароль для базы данных
+
+- `DB_HOST` - хост для базы данных
+
+- `DB_PORT` - порт для базы данных
 
 
 ## 💿 [Зависимости](https://github.com/Dnevnik365/web/blob/dev/pyproject.toml)
@@ -83,18 +91,18 @@ make test-cov
 
 - **[fastapi-users](https://pypi.org/project/fastapi-users/) - 13.0.0**
 
-- **[sqlalchemy](https://pypi.org/project/sqlalchemy) - 2.0.29**
-
-- **[pydnevnikruapi](https://pypi.org/project/pydnevnikruapi) - 0.1.1**
-
-- **[redis](https://pypi.org/project/redis) - 5.0.3**
-
-- **[uvicorn](https://pypi.org/project/uvicorn/) - 0.29.0**
+- **[uvicorn](https://pypi.org/project/uvicorn/) - 0.29.29.0**
 
 - **[httpx](https://pypi.org/project/httpx/) - 0.27.0**
 
-- **[flake8](https://pypi.org/project/fastapi/) - 7.0.0**
+- **[pydnevnikruapi](https://pypi.org/project/pydnevnikruapi/) - 0.1.1**
 
-- **[pytest](https://pypi.org/project/pytest/) - 8.1.1**
+- **[redis](https://pypi.org/project/redis/) - 5.0.3**
+
+- **[sqlalchemy](https://pypi.org/project/sqlalchemy/) - 2.0.29**
+
+- **[flake8](https://pypi.org/project/flake8/) - 7.0.0**
+
+- **[pytest](https://pypi.org/project/pytest/) = 8.1.1**
 
 - **[pytest-cov](https://pypi.org/project/pytest-cov/) - 5.0.0**
