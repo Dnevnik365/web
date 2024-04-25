@@ -2,7 +2,7 @@ install:
 	docker-compose build
 
 start:
-	docker-compose start
+	docker-compose up
 
 update:
 	poetry update
