@@ -7,5 +7,6 @@ __pycache__/
 .env.docker
 TODO.md
 logs/
+pgdata/
 *.log
 .env
