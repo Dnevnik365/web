@@ -4,6 +4,12 @@ install:
 up:
 	sudo docker-compose up --force-recreate
 
+rm:
+	sudo docker-compose stop
+	sudo docker-compose rm
+	sudo rm -rf pgdata
+
+
 update:
 	poetry update
 
