@@ -1,8 +1,8 @@
 install:
-	docker-compose build
+	sudo docker-compose build
 
 up:
-	docker-compose up --force-recreate
+	sudo docker-compose up --force-recreate
 
 update:
 	poetry update

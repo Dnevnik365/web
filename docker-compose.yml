@@ -1,17 +1,17 @@
 version: '3.7'
 
 services:
-#  dnevnik365:
-#    build: .
-#    volumes:
-#      - ./dnevnik365/:/app/
-#    ports:
-#      - ${PORT}:${PORT}
-#    environment:
-#      - DATABASE_URL='postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}'
-#    depends_on:
-#      - db
-#      - nginx
+  dnevnik365:
+    build: .
+    volumes:
+      - ./dnevnik365/:/app/
+    ports:
+      - ${PORT}:${PORT}
+    environment:
+      - DATABASE_URL='postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}'
+    depends_on:
+      - db
+      - nginx
   db:
     image: postgres:latest
     environment:
