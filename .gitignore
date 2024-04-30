@@ -4,7 +4,6 @@
 .python-version
 __pycache__/
 .pytest_cache/
-.env.docker
 TODO.md
 logs/
 pgdata/

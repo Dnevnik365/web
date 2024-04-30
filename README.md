@@ -75,15 +75,17 @@ make test-cov
 
 - `PORT` - порт сервера
 
-- `POSTGRES_USER` - юзернейм для базы данных
+- `POSTGRES_USER` - юзернейм для базы данных postgres
 
-- `POSTGRES_PASSWORD` - пароль для базы данных
-
-- `POSTGRES_HOST` - хост для базы данных
+- `POSTGRES_PASSWORD` - пароль для базы данных postgres
 
 - `POSTGRES_PORT` - порт для базы данных
 
 - `POSTGRES_NAME` - имя базы данных(по дефолту используется `dnevnik`)
+
+- `REDIS_USER` - юзернейм для базы данных redis
+
+- `REDIS_PASSWORD` - пароль для базы данных redis
 
 
 ## 💿 [Зависимости](https://github.com/Dnevnik365/web/blob/dev/pyproject.toml)
@@ -108,7 +110,7 @@ make test-cov
 
 - **[pydnevnikruapi](https://pypi.org/project/pydnevnikruapi/) - 0.1.1**
 
-- **[redis](https://pypi.org/project/redis/) - 5.0.3**
+- **[redis](https://pypi.org/project/aioredis/) - 5.0.4**
 
 - **[sqlalchemy](https://pypi.org/project/sqlalchemy/) - 2.0.29**
 
