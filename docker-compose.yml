@@ -19,7 +19,7 @@ services:
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_HOST=${HOST}
+      - POSTGRES_HOST=${POSTGRES_HOST}
       - POSTGRES_PORT=${POSTGRES_PORT}
       - POSTGRES_NAME=${POSTGRES_NAME}
     volumes:
@@ -33,15 +33,15 @@ services:
   purposes_db:
     image: redis:7.2.4
     environment:
-      - REDIS_HOST=${HOST}
+      - REDIS_HOST=${REDIS_HOST}
       - REDIS_USER=${REDIS_USER}
       - REDIS_PASSWORD=${REDIS_PASSWORD}
     ports:
-      - 6379:6379
+      - 6378:6378
   timetable_db:
     image: redis:7.2.4
     environment:
-      - REDIS_HOST=${HOST}
+      - REDIS_HOST=${REDIS_HOST}
       - REDIS_USER=${REDIS_USER}
       - REDIS_PASSWORD=${REDIS_PASSWORD}
     ports:

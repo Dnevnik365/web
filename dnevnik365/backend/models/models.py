@@ -1,17 +1,26 @@
-from sqlalchemy import MetaData
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 from pydantic import BaseModel
 
 from typing import Optional, Dict, List
 from datetime import date
-
-
-metadata = MetaData()
+from enum import Enum
 
 
 class Base(DeclarativeBase):
     pass
+
+
+class Service(Enum):
+    dnevnikru = 'dnevnikru'
+    ballovnet = 'ballovnet'
+    eljur = 'eljur'
+    kirov_education = 'kirov_education'
+
+
+class Role(Enum):
+    teacher = 'teacher'
+    student = 'student'
 
 
 class User(BaseModel):
@@ -19,14 +28,14 @@ class User(BaseModel):
     name: Optional[str] = None
     login: str
     password: str
-    role: str
-    service: str
+    role: Role
+    service: Service
 
 
 class UserModel(Base):
     __tablename__ = 'user'
     id: Mapped[int] = mapped_column(primary_key=True)
-    name: Mapped[Optional[str]] = mapped_column(nullable=True)
+    name: Mapped[str | None]
     login: Mapped[str]
     password: Mapped[str]
     role: Mapped[str]
