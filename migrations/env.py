@@ -6,7 +6,7 @@ from sqlalchemy import pool
 from alembic import context
 
 from dnevnik365.backend.api.settings import DATABASE_URL
-from dnevnik365.backend.models.models import Base, UserModel # noqa
+from dnevnik365.backend.models.pydantic_models import Base, UserModel # noqa
 
 
 config = context.config

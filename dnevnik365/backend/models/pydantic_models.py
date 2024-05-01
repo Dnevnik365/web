@@ -1,14 +1,8 @@
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-
 from pydantic import BaseModel
 
 from typing import Optional, Dict, List
 from datetime import date
 from enum import Enum
-
-
-class Base(DeclarativeBase):
-    pass
 
 
 class Service(Enum):
@@ -30,16 +24,6 @@ class User(BaseModel):
     password: str
     role: Role
     service: Service
-
-
-class UserModel(Base):
-    __tablename__ = 'user'
-    id: Mapped[int] = mapped_column(primary_key=True)
-    name: Mapped[str | None]
-    login: Mapped[str]
-    password: Mapped[str]
-    role: Mapped[str]
-    service: Mapped[str]
 
 
 class Puproses(BaseModel):

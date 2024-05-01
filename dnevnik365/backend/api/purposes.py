@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
 from dnevnik365.backend.api.database import purposes
-from dnevnik365.backend.models.models import Puproses
+from dnevnik365.backend.models.pydantic_models import Puproses
 
 
 purposes_router = APIRouter(prefix='/puroses')
