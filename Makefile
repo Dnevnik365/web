@@ -20,6 +20,7 @@ update:
 
 lint:
 	poetry run flake8
+	poetry run pyright
 
 test:
 	poetry run pytest dnevnik365/backend/tests/*.py

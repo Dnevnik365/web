@@ -107,8 +107,6 @@ make test-cov
 
 - **[asyncpg](https://pypi.org/project/asyncpg/) - 0.29.0**
 
-- **[alembic](https://pypi.org/project/alembic/) - 1.13.1**
-
 - **[python-dotenv](https://pypi.org/project/python-dotenv/) - 1.0.1**
 
 - **[pydantic](https://pypi.org/project/pydantic/) - 2.7.0**
@@ -119,18 +117,22 @@ make test-cov
 
 - **[fastapi-users](https://pypi.org/project/fastapi-users/) - 13.0.0**
 
-- **[uvicorn](https://pypi.org/project/uvicorn/) - 0.29.29.0**
+- **[uvicorn](https://pypi.org/project/uvicorn/) - 0.29.0**
 
 - **[httpx](https://pypi.org/project/httpx/) - 0.27.0**
 
 - **[pydnevnikruapi](https://pypi.org/project/pydnevnikruapi/) - 0.1.1**
 
-- **[redis](https://pypi.org/project/aioredis/) - 5.0.4**
-
 - **[sqlalchemy](https://pypi.org/project/sqlalchemy/) - 2.0.29**
+
+- **[redis](https://pypi.org/project/aioredis/) - 5.0.4**
 
 - **[flake8](https://pypi.org/project/flake8/) - 7.0.0**
 
 - **[pytest](https://pypi.org/project/pytest/) - 8.1.1**
 
 - **[pytest-cov](https://pypi.org/project/pytest-cov/) - 5.0.0**
+
+- **[alembic](https://pypi.org/project/alembic/) - 1.13.1**
+
+- **[pyright](https://pypi.org/project/pyright) - 1.1.360**
