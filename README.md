@@ -48,6 +48,19 @@ make start
 ```bash
 make rm
 ```
+<br>
+
+Запустить обновление БД(для последней версии укажите `revision=head`)
+```bash
+make db-upgrade revision=<версия>
+```
+<br>
+
+Запустить откат БД
+```bash
+make db-downgrade revision=<версия>
+```
+<br>
 
 Проверить читаемость кода
 ```bash
@@ -93,6 +106,8 @@ make test-cov
 - **[fastapi](https://pypi.org/project/fastapi/) - 0.110.2**
 
 - **[asyncpg](https://pypi.org/project/asyncpg/) - 0.29.0**
+
+- **[alembic](https://pypi.org/project/alembic/) - 1.13.1**
 
 - **[python-dotenv](https://pypi.org/project/python-dotenv/) - 1.0.1**
 

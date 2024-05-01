@@ -9,6 +9,12 @@ rm:
 	sudo docker-compose rm
 	sudo rm -rf pgdata
 
+db-upgrade:
+	poetry run alembic upgrade $(revision)
+
+db-downgrade:
+	poetry run alembic downgrade $(revision)
+
 update:
 	poetry update
 
