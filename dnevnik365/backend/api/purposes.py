@@ -7,6 +7,11 @@ from dnevnik365.backend.models.pydantic_models import Puproses
 purposes_router = APIRouter(prefix='/puroses')
 
 
+@purposes_router.on_event('shutdown')
+async def on_shutdown():
+    await purposes.close()
+
+
 @purposes_router.get('/{subject}')
 async def view_purposes(subject: str = None):
     if subject is None:
