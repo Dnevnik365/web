@@ -11,6 +11,7 @@ DB_USERNAME = environ.get('POSTGRES_USERNAME', 'postgres')
 DB_PASSWORD = environ.get('POSTGRES_PASSWORD', 'postgres')
 DB_PORT = int(environ.get('POSTGRES_PORT', 5432))
 
+REDIS_PORT = environ.get('REDIS_PORT', 6379)
 REDIS_USER = environ.get('REDIS_USER', 'redis')
 REDIS_PASSWORD = environ.get('REDIS_PASSWORD', 'redis')
 

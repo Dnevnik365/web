@@ -12,14 +12,13 @@ services:
     depends_on:
       - users_db
       - purposes_db
-      - timetable_db
       - nginx
   users_db:
     image: postgres:latest
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_HOST=${POSTGRES_HOST}
+      - POSTGRES_HOST=${HOST}
       - POSTGRES_PORT=${POSTGRES_PORT}
       - POSTGRES_NAME=${POSTGRES_NAME}
     volumes:
@@ -33,16 +32,9 @@ services:
   purposes_db:
     image: redis:7.2.4
     environment:
-      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_HOST=${PORT}
+      - REDIS_PORT=${REDIS_PORT}
       - REDIS_USER=${REDIS_USER}
       - REDIS_PASSWORD=${REDIS_PASSWORD}
     ports:
-      - 6378:6378
-  timetable_db:
-    image: redis:7.2.4
-    environment:
-      - REDIS_HOST=${REDIS_HOST}
-      - REDIS_USER=${REDIS_USER}
-      - REDIS_PASSWORD=${REDIS_PASSWORD}
-    ports:
-      - 6380:6380
+      -${REDIS_PORT}:${REDIS_PORT}

@@ -29,8 +29,3 @@ class User(BaseModel):
 class Puproses(BaseModel):
     user_id: int
     purposes: Dict[str, float] = {}
-
-
-class Timetable(BaseModel):
-    user_id: int
-    timetable: Dict[date, List[str]] = {}
