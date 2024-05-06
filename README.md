@@ -100,8 +100,6 @@ make test-cov
 
 - `REDIS_PASSWORD` - пароль для базы данных redis
 
-- `REDIS_PORT` - порт для БД redis
-
 
 ## 💿 [Зависимости](https://github.com/Dnevnik365/web/blob/dev/pyproject.toml)
 

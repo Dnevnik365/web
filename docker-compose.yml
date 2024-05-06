@@ -32,9 +32,16 @@ services:
   purposes_db:
     image: redis:7.2.4
     environment:
-      - REDIS_HOST=${PORT}
-      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_HOST=${HOST}
       - REDIS_USER=${REDIS_USER}
       - REDIS_PASSWORD=${REDIS_PASSWORD}
     ports:
-      -${REDIS_PORT}:${REDIS_PORT}
+      - 6378:6378
+  homework_db:
+    image: redis:7.2.4
+    environment:
+      - REDIS_HOST=${HOST}
+      - REDIS_USER=${REDIS_USER}
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    ports:
+      - 6380:6380
