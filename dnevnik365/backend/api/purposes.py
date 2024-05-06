@@ -4,7 +4,7 @@ from dnevnik365.backend.api.database import purposes
 from dnevnik365.backend.models.pydantic_models import Puproses
 
 
-purposes_router = APIRouter(prefix='/puroses')
+purposes_router = APIRouter(prefix='puroses')
 
 
 @purposes_router.on_event('shutdown')
@@ -24,8 +24,8 @@ async def get_create_purpose():
 
 
 @purposes_router.post('/new')
-async def create_purpose(purposes: Puproses):
-    purposes.set(purposes.user_id, purposes.purposes)
+async def create_purpose(purposes_: Puproses):
+    purposes.set(purposes_.user_id, purposes_.purposes)
 
 
 @purposes_router.get('/{subject}/edit')
@@ -35,7 +35,7 @@ async def get_edit_purpose():
 
 @purposes_router.put('/{subject}/edit')
 async def update_purpose(subject: str, user_id: int, new_purpose: float):
-    _purposes: dict = purposes.get(user_id)
+    _purposes = dict(purposes.get(user_id))
     _purposes[subject] = new_purpose
     purposes.set(user_id, _purposes)
 
