@@ -29,3 +29,10 @@ class User(BaseModel):
 class Puproses(BaseModel):
     user_id: int
     purposes: Dict[str, float] = {}
+
+
+class Homework(BaseModel):
+    user_id: int
+    date: date
+    lesson: int
+    is_done: bool = False
