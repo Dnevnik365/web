@@ -8,7 +8,7 @@ services:
     ports:
       - ${PORT}:${PORT}
     environment:
-      - DATABASE_URL='postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_NAME}'
+      - DATABASE_URL='postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${HOST}:${POSTGRES_PORT}/${POSTGRES_NAME}'
     depends_on:
       - users_db
       - purposes_db
@@ -22,7 +22,7 @@ services:
       - POSTGRES_PORT=${POSTGRES_PORT}
       - POSTGRES_NAME=${POSTGRES_NAME}
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - ./db:/var/lib/postgresql/data
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
   nginx:

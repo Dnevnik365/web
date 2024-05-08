@@ -28,7 +28,7 @@ git clone https://github.com/Dnevnik365/web/
 
 Установить зависимости
 ```bash
-make install
+make build
 ```
 <br>
 

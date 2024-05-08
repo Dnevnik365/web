@@ -1,4 +1,4 @@
-install:
+build:
 	sudo docker-compose build
 
 up:
@@ -7,7 +7,7 @@ up:
 rm:
 	sudo docker-compose stop
 	sudo docker-compose rm
-	sudo rm -rf pgdata
+	sudo rm -rf db
 
 db-upgrade:
 	poetry run alembic upgrade $(revision)
