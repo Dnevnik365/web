@@ -22,7 +22,7 @@ services:
       - POSTGRES_PORT=${POSTGRES_PORT}
       - POSTGRES_NAME=${POSTGRES_NAME}
     volumes:
-      - ./db:/var/lib/postgresql/data
+      - ./db/users:/var/lib/postgresql/data
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
   nginx:
@@ -31,14 +31,16 @@ services:
       - 80:80
   purposes_db:
     image: redis:7.2.4
+    volumes:
+      - ./db/purposes:/var/lib/redis/
     environment:
       - REDIS_HOST=${HOST}
-      - REDIS_USER=${REDIS_USER}
-      - REDIS_PASSWORD=${REDIS_PASSWORD}
     ports:
       - 6378:6378
   homework_db:
     image: redis:7.2.4
+    volumes:
+      - ./db/homework:/var/lib/redis/
     environment:
       - REDIS_HOST=${HOST}
       - REDIS_USER=${REDIS_USER}
