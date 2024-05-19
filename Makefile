@@ -1,11 +1,16 @@
 build:
 	sudo docker-compose build
 
-up:
+start:
 	sudo docker-compose up --force-recreate --remove-orphans
 
-rm:
+up:
+	sudo docker-compose up --force-recreate --remove-orphans -d
+
+stop:
 	sudo docker-compose stop
+
+rm:
 	sudo docker-compose rm
 	sudo rm -rf db
 
