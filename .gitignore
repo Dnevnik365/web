@@ -1,11 +1,40 @@
-.venv/
-.vscode/
-.idea/
-.python-version
+# byte-compiled / optimized / DLL files
 __pycache__/
-.pytest_cache/
-TODO.md
-logs/
-pgdata/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# translations
+*.mo
+*.pot
+
+# logs
 *.log
+logs/
+
+# databases
+db/
+
+# pytest
+.pytest_cache/
+
+# pyenv
+.python-version
+
+# poetry
+poetry.lock
+
+# environments
 .env
+.venv/
+
+# Visual Studio Code settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# ideas, tasks, etc.
+TODO.md
