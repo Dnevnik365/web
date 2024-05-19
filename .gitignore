@@ -17,6 +17,11 @@ logs/
 # databases
 db/
 
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
 # pytest
 .pytest_cache/
 
