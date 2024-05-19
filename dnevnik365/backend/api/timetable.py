@@ -6,7 +6,7 @@ from typing import List, Dict
 from dnevnik365.backend.scripts.base import BaseStudentDnevnik
 
 
-timetable_router = APIRouter(prefix='timetable')
+timetable_router = APIRouter(prefix='/timetable')
 
 
 @timetable_router.post('/')

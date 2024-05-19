@@ -5,4 +5,4 @@ from dnevnik365.backend.api.settings import DATABASE_URL, REDIS_USER, REDIS_PASS
 
 engine = create_async_engine(DATABASE_URL)
 purposes = Redis(host=HOST, port=6378, username=REDIS_USER, password=REDIS_PASSWORD)
-homeworks = Redis(host=HOST, port=6378, username=REDIS_USER, password=REDIS_PASSWORD)
+homeworks = Redis(host=HOST, port=6380, username=REDIS_USER, password=REDIS_PASSWORD)
