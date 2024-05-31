@@ -86,8 +86,6 @@ make test-cov
 
 - `HOST` - хост сервера
 
-- `PORT` - порт сервера
-
 - `POSTGRES_USER` - юзернейм для базы данных postgres
 
 - `POSTGRES_PASSWORD` - пароль для базы данных postgres
@@ -135,4 +133,4 @@ make test-cov
 
 - **[alembic](https://pypi.org/project/alembic/) - 1.13.1**
 
-- **[pyright](https://pypi.org/project/pyright) - 1.1.360**
+- **[mypy](https://pypi.org/project/pyright) - 1.1.360**
