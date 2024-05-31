@@ -8,7 +8,13 @@ services:
     ports:
       - ${PORT}:${PORT}
     environment:
-      - DATABASE_URL='postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${HOST}:${POSTGRES_PORT}/${POSTGRES_NAME}'
+      - HOST=${HOST}
+      - POSTGRES_NAME=${POSTGRES_NAME}
+      - POSTGRES_USERNAME=${POSTGRES_USERNAME}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+      - REDIS_USER=${REDIS_USER}
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
     depends_on:
       - users_db
       - purposes_db
@@ -35,6 +41,9 @@ services:
       - ./db/purposes:/var/lib/redis/
     environment:
       - REDIS_HOST=${HOST}
+      - REDIS_HOST=${HOST}
+      - REDIS_USER=${REDIS_USER}
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
     ports:
       - 6378:6378
   homework_db:
