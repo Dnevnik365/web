@@ -1,47 +1,39 @@
 from fastapi import APIRouter
 
-from dnevnik365.backend.api.database import purposes
-from dnevnik365.backend.models.pydantic_models import Puproses
+from dnevnik365.backend.api.database import purposes as r
+from dnevnik365.backend.models.pydantic_models import Puproses, PurposeValue
 
 
-purposes_router = APIRouter(prefix='puroses')
+purposes_router = APIRouter(prefix='/purposes')
 
 
 @purposes_router.on_event('shutdown')
 async def on_shutdown():
-    await purposes.close()
+    await r.close()
 
 
-@purposes_router.get('/{subject}')
-async def view_purposes(subject: str = None):
-    if subject is None:
-        return  # all subjects
+@purposes_router.get('/')
+async def view_purposes(user_id: int):
+    purposes = await r.hgetall(str(user_id))
+    return dict(purposes)
 
 
-@purposes_router.get('/new')
-async def get_create_purpose():
-    return
+@purposes_router.post('/')
+async def create_purpose(purposes: Puproses):
+    return r.hmset(str(purposes.user_id), purposes.purposes)
 
 
-@purposes_router.post('/new')
-async def create_purpose(purposes_: Puproses):
-    purposes.set(purposes_.user_id, purposes_.purposes)
+@purposes_router.patch('/')
+async def update_purpose(user_id: int, subject: str, purpose: PurposeValue):
+    return r.hset(str(user_id), subject, purpose)
 
 
-@purposes_router.get('/{subject}/edit')
-async def get_edit_purpose():
-    return
+@purposes_router.put('/')
+async def update_purposes(purposes: Puproses):
+    r.hmset(str(purposes.user_id), purposes.purposes)
+    return {'status': 'fine'}
 
 
-@purposes_router.put('/{subject}/edit')
-async def update_purpose(subject: str, user_id: int, new_purpose: float):
-    _purposes = dict(purposes.get(user_id))
-    _purposes[subject] = new_purpose
-    purposes.set(user_id, _purposes)
-
-
-@purposes_router.delete('/{subject}')
-async def remove_purpose(subject: str, user_id: int):
-    _purposes: dict = purposes.get(user_id)
-    _purposes[subject] = None
-    purposes.set(user_id, _purposes)
+@purposes_router.delete('/')
+async def remove_purpose(user_id: int, subject: str):
+    return r.hdel(user_id, subject)
