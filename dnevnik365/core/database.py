@@ -1,6 +1,6 @@
 from redis.asyncio import Redis
 from sqlalchemy.ext.asyncio import create_async_engine
-from dnevnik365.backend.api.settings import DATABASE_URL, REDIS_USER, REDIS_PASSWORD, HOST
+from dnevnik365.core.settings import DATABASE_URL, REDIS_USER, REDIS_PASSWORD, HOST
 
 
 engine = create_async_engine(DATABASE_URL)
