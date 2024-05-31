@@ -5,7 +5,7 @@
     <a href="https://github.com/Dnevnik365/web/blob/dev/LICENSE">
         <img alt="license" src="https://img.shields.io/github/license/Dnevnik365/web?label=License&color=green&style=for-the-badge">
     </a>
-    <img alt="python" src="https://img.shields.io/badge/3.7+-green?color=green&label=Python&style=for-the-badge">
+    <img alt="python" src="https://img.shields.io/badge/3.12.2+-green?color=green&label=Python&style=for-the-badge">
 </p>
 
 <h1 align="center">Дневник 365</h1>
