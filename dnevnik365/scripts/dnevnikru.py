@@ -1,6 +1,6 @@
 from pydnevnikruapi.aiodnevnik import AsyncDiaryAPI
 from datetime import date
-from dnevnik365.backend.scripts.base import BaseStudentDnevnik
+from dnevnik365.scripts.base import BaseStudentDnevnik
 
 
 class StudentDnevnik(AsyncDiaryAPI, BaseStudentDnevnik):

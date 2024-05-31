@@ -1,12 +1,9 @@
 from fastapi import FastAPI
 
-import logging
-
-from dnevnik365.backend.api.homeworks import homework_router
-from dnevnik365.backend.api.purposes import purposes_router
+from dnevnik365.api.homeworks import homework_router
+from dnevnik365.api.purposes import purposes_router
 
 
-logger = logging.getLogger()
 app = FastAPI()
 
 

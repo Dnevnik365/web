@@ -5,8 +5,8 @@ from sqlalchemy import pool
 
 from alembic import context
 
-from dnevnik365.backend.api.settings import DATABASE_URL
-from dnevnik365.backend.models.database_models import Base, UserModel # noqa
+from dnevnik365.core.settings import DATABASE_URL
+from dnevnik365.models.database import Base, UserModel # noqa
 
 
 config = context.config

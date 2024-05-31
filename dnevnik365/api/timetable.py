@@ -3,7 +3,7 @@ from fastapi import APIRouter
 from datetime import date
 from typing import List, Dict
 
-from dnevnik365.backend.scripts.base import BaseStudentDnevnik
+from dnevnik365.scripts.base import BaseStudentDnevnik
 
 
 timetable_router = APIRouter(prefix='/timetable')
