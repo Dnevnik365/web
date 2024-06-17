@@ -4,55 +4,50 @@ services:
   dnevnik365:
     build: .
     volumes:
-      - ./dnevnik365/:/app/
+      - ./:/dnevnik365/
     ports:
-      - ${PORT}:${PORT}
-    environment:
-      - HOST=${HOST}
-      - POSTGRES_NAME=${POSTGRES_NAME}
-      - POSTGRES_USERNAME=${POSTGRES_USERNAME}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_PORT=${POSTGRES_PORT}
-      - REDIS_USER=${REDIS_USER}
-      - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - '8000:8000'
+    env_file: .env 
     depends_on:
       - users_db
       - purposes_db
-      - nginx
+      - homework_db
   users_db:
     image: postgres:latest
+    restart: always
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_HOST=${HOST}
       - POSTGRES_PORT=${POSTGRES_PORT}
-      - POSTGRES_NAME=${POSTGRES_NAME}
+      - POSTGRES_DB=${POSTGRES_DB}
     volumes:
       - ./db/users:/var/lib/postgresql/data
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
-  nginx:
-    image: nginx:alpine
-    ports:
-      - 80:80
   purposes_db:
     image: redis:7.2.4
+    restart: always
+    command: --port ${PURPOSES_DB_PORT} --requirepass ${REDIS_PASSWORD}
     volumes:
       - ./db/purposes:/var/lib/redis/
+      - ./db/purposes/redis.conf:/usr/local/etc/redis/redis.conf
     environment:
-      - REDIS_HOST=${HOST}
-      - REDIS_HOST=${HOST}
-      - REDIS_USER=${REDIS_USER}
+      - REDIS_DATABASES=16
+      - REDIS_PORT=${PURPOSES_DB_PORT}
       - REDIS_PASSWORD=${REDIS_PASSWORD}
     ports:
-      - 6378:6378
+      - ${PURPOSES_DB_PORT}:${PURPOSES_DB_PORT}
   homework_db:
     image: redis:7.2.4
+    restart: always
+    command: --port ${HOMEWORK_DB_PORT} --requirepass ${REDIS_PASSWORD}
     volumes:
       - ./db/homework:/var/lib/redis/
+      - ./db/homework/redis.conf:/usr/local/etc/redis/redis.conf
     environment:
-      - REDIS_HOST=${HOST}
-      - REDIS_USER=${REDIS_USER}
+      - REDIS_DATABASES=16
+      - REDIS_PORT=${HOMEWORK_DB_PORT}
       - REDIS_PASSWORD=${REDIS_PASSWORD}
     ports:
-      - 6380:6380
+      - ${HOMEWORK_DB_PORT}:${HOMEWORK_DB_PORT}
