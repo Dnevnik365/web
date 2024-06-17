@@ -1,17 +1,17 @@
 build:
-	sudo docker-compose build
+	poetry run docker-compose build
 
 start:
-	sudo docker-compose up --force-recreate --remove-orphans
+	poetry run docker-compose up --force-recreate --remove-orphans
 
 up:
-	sudo docker-compose up --force-recreate --remove-orphans -d
+	poetry run docker-compose up --force-recreate --remove-orphans -d
 
 stop:
-	sudo docker-compose stop
+	poetry run docker-compose stop
 
 rm:
-	sudo docker-compose rm
+	poetry run docker-compose rm
 	sudo rm -rf db
 
 db-upgrade:
