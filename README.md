@@ -1,11 +1,8 @@
 <p align="center">
-    <a href="https://github.com/Dnevnik365/web/releases">
-        <img alt="release" src="https://img.shields.io/github/v/release/Dnevnik365/web?color=green&label=Latest Release&style=for-the-badge&sort=semver">
-    </a>
     <a href="https://github.com/Dnevnik365/web/blob/dev/LICENSE">
         <img alt="license" src="https://img.shields.io/github/license/Dnevnik365/web?label=License&color=green&style=for-the-badge">
     </a>
-    <img alt="python" src="https://img.shields.io/badge/3.12.2+-green?color=green&label=Python&style=for-the-badge">
+    <img alt="python" src="https://img.shields.io/badge/3.12.2-green?color=green&label=Python&style=for-the-badge">
 </p>
 
 <h1 align="center">Дневник 365</h1>
@@ -40,11 +37,23 @@ make update
 
 Запустить проект
 ```bash
+make start
+```
+<br>
+
+Запустить проект в фоновом режиме
+```bash
 make up
 ```
 <br>
 
-Остановить все контейнеры и удалить данные из БД
+Остановить контейнеры
+```bash
+make stop
+```
+<br
+
+Удалить контейнеры и данные из БД
 ```bash
 make rm
 ```
@@ -88,49 +97,49 @@ make test-cov
 
 - `POSTGRES_USER` - юзернейм для базы данных postgres
 
-- `POSTGRES_PASSWORD` - пароль для базы данных postgres
+- `POSTGRES_PASSWORD` - пароль для БД
 
-- `POSTGRES_PORT` - порт для базы данных
+- `POSTGRES_PORT` - порт БД
 
-- `POSTGRES_NAME` - имя базы данных(по дефолту используется `dnevnik`)
+- `POSTGRES_DB` - название БД
 
-- `REDIS_USER` - юзернейм для базы данных redis
+- `REDIS_PASSWORD` - пароль для баз данных redis
 
-- `REDIS_PASSWORD` - пароль для базы данных redis
+- `HOMEWORK_DB_PORT` - порт для бд с домашними заданиями
+
+- `PURPOSES_DB_PORT` - порт для бд с целями
 
 
 ## 💿 [Зависимости](https://github.com/Dnevnik365/web/blob/dev/pyproject.toml)
 
-- **[fastapi](https://pypi.org/project/fastapi/) - 0.110.2**
+- **[fastapi](https://pypi.prg/project/fastapi) - 0.110.2**
 
-- **[asyncpg](https://pypi.org/project/asyncpg/) - 0.29.0**
+- **[asyncpg](https://pypi.prg/project/asyncpg) - 0.29.0**
 
-- **[python-dotenv](https://pypi.org/project/python-dotenv/) - 1.0.1**
+- **[python-dotenv](https://pypi.prg/project/python-dotenv) - 1.0.1**
 
-- **[pydantic](https://pypi.org/project/pydantic/) - 2.7.0**
+- **[jinja2](https://pypi.prg/project/jinja2) - 3.1.4**
 
-- **[jinja2](https://pypi.org/project/jinja2/) - 3.1.3**
+- **[python-multipart](https://pypi.prg/project/pyhton-multipart) - 0.0.9**
 
-- **[python-multipart](https://pypi.org/project/python-multipart/) - 0.0.9**
+- **[uvicorn](https://pypi.prg/project/uvicorn) - 0.29.0**
 
-- **[fastapi-users](https://pypi.org/project/fastapi-users/) - 13.0.0**
+- **[pydnevnikruapi](https://pypi.prg/project/pydnevnikruapi) - 0.1.1**
 
-- **[uvicorn](https://pypi.org/project/uvicorn/) - 0.29.0**
+- **[sqlalchemy](https://pypi.prg/project/sqlalchemy) - 2.0.29**
 
-- **[httpx](https://pypi.org/project/httpx/) - 0.27.0**
+- **[redis](https://pypi.prg/project/redis) - 5.0.4**
 
-- **[pydnevnikruapi](https://pypi.org/project/pydnevnikruapi/) - 0.1.1**
+- **[alembic](https://pypi.prg/project/alembic) - 1.13.1**
 
-- **[sqlalchemy](https://pypi.org/project/sqlalchemy/) - 2.0.29**
+- **[aiohttp](https://pypi.prg/project/aiohttp) - 3.9.5**
 
-- **[redis](https://pypi.org/project/aioredis/) - 5.0.4**
+- **[flake8](https://pypi.prg/project/flake8) - 7.0.0**
 
-- **[flake8](https://pypi.org/project/flake8/) - 7.0.0**
+- **[pytest](https://pypi.prg/project/pytest) - 8.1.1**
 
-- **[pytest](https://pypi.org/project/pytest/) - 8.1.1**
+- **[pytest-cov](https://pypi.prg/project/pytest-cov) - 5.0.0**
 
-- **[pytest-cov](https://pypi.org/project/pytest-cov/) - 5.0.0**
+- **[mypy](https://pypi.prg/project/mypy) - 1.10.0**
 
-- **[alembic](https://pypi.org/project/alembic/) - 1.13.1**
-
-- **[mypy](https://pypi.org/project/pyright) - 1.1.360**
+- **[httpx](https://pypi.prg/project/httpx) - 0.27.0**
